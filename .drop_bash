@@ -1,0 +1,60 @@
+#   Dropbash 1.0
+#   https://github.com/kerns/dropbash
+#
+#   ----------------
+#
+#   1) Move this to the root level of your Dropbox folder.
+#
+#   2) Link to this file from the top of your existing ~/.bash_profile
+#   by adding the following line to the top and removing the "#".
+#
+#   source ~/Dropbox/.drop_bash
+#
+#   Note, if you don't have a .bash_profile in your home directory, create it.
+#
+#   3) Log out or reboot once to have the new commands loaded.
+#   Future reloads can be done with "reload".
+#
+#   ----------------
+#
+#   Nerds could expand this with some simple functions.
+#
+#   Example:
+#   foo() { /path/to/command "$@" ;}
+#
+#   Which could be called just like these alias.
+#   foo arg1 arg2 argN
+#
+#   More info: http://goo.gl/hXnHW
+#
+#   ----------------
+
+# Bash stuff (so self-referential)
+alias aliases='cat ~/Dropbox/.drop_bash'
+alias setup='subl ~/Dropbox/.drop_bash'
+alias reload='source ~/Dropbox/.drop_bash'
+
+# Navigation
+alias finder='open `pwd`'
+alias home="cd ~"
+alias sites="cd ~/Sites/"
+
+# Files, you love them.
+alias bless='chmod a+x'
+alias show='defaults write com.apple.Finder AppleShowAllFiles TRUE ; killall Finder'
+alias hide='defaults write com.apple.Finder AppleShowAllFiles FALSE ; killall Finder'
+
+# Apache stuff
+alias stop='sudo apachectl stop'
+alias start='sudo apachectl start'
+alias restart='sudo apachectl restart'
+alias error='tail -f /var/log/apache2/error_log'
+alias access='tail -f /var/log/apache2/access_log'
+
+# Housekeeping
+alias fixhosts='open /etc/apache2/virtualhosts; subl /etc/hosts'
+alias ios='ln -s /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Applications/iPhone\ Simulator.app /Applications/iPhone\ Simulator.app'
+
+### App/OS Shortcuts
+alias sublime='open -a Sublime\ Text\ 2.app'
+alias sys='open -a System\ Preferences.app'
